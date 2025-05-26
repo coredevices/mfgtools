@@ -28,6 +28,9 @@ python mfginfo-tool.py -p path/to/serial/port [-c path/to/config.ini]
 
 Note that `count` will be automatically increased after each run.
 
+**NOTE**: You can also pass `--no-lock` if you want to skip locking OTP.
+It can be useful while testing, so you can retry as many times as you want.
+
 Example of a successful run:
 
 ```
