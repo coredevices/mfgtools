@@ -1,0 +1,3 @@
+setuptools
+-e python_libs/pebble-commander
+-e python_libs/pulse2
