@@ -5,7 +5,17 @@ import sys
 from pebble import pulse2, commander
 
 
+SERIAL_LEN = 12
+HWVER_MAX_LEN = 9
+
+
 def main(port: str, serial: str, hwver: str, no_lock: bool) -> None:
+    if len(serial) != SERIAL_LEN:
+        raise ValueError("Invalid serial length")
+
+    if len(hwver) > HWVER_MAX_LEN:
+        raise ValueError("Invalid hardware version length")
+
     iface = pulse2.Interface.open_dbgserial(port)
     link = iface.get_link(timeout=5.)
     if not link:
