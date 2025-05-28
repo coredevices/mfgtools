@@ -7,7 +7,10 @@ from pebble import pulse2, commander
 
 def main(port: str, serial: str, hwver: str, no_lock: bool) -> None:
     iface = pulse2.Interface.open_dbgserial(port)
-    prompt = commander.apps.Prompt(iface.get_link())
+    link = iface.get_link(timeout=5.)
+    if not link:
+        raise TimeoutError("Could not obtain link")
+    prompt = commander.apps.Prompt(link)
 
     sys.stdout.write("Erasing OTP\t\t\t\t")
     r = prompt.command_and_response("flash sec wipe")
