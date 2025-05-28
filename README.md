@@ -21,19 +21,14 @@ Device needs to be running the PRF (recovery) firmware.
 This tool is used to flash unique information to each device such as serial
 numbers.
 
-Before starting, make sure that the contents of `config.ini` is correct,
-in particular:
-
-- `datecode`: Adjust to current date
-- `count`: Adjust to `0` if starting
-
 A device can be flashed by running:
 
 ```
-python mfginfo-tool.py -p path/to/serial/port [-c path/to/config.ini]
+python mfginfo-tool.py -p path/to/serial/port -s $SERIAL -v $HWVER
 ```
 
-Note that `count` will be automatically increased after each run.
+where `$SERIAL` is a 12-character serial number and `$HWVER` is the hardware
+version, e.g. `asterix`.
 
 **NOTE**: You can also pass `--no-lock` if you want to skip locking OTP.
 It can be useful while testing, so you can retry as many times as you want.
@@ -45,8 +40,6 @@ Erasing OTP                             OK
 Writing S/N             S101220A0009    OK
 Writing HWVER           asterix         OK
 Writing PCBA S/N        S101220A0009    OK
-Writing color code      34              OK
-Writing model           C2D             OK
 Locking OTP                             OK
 ```
 
