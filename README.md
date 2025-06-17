@@ -60,3 +60,19 @@ Erasing... done.
 ...............RRR................R.R.R..............RR.R..............R...R..............R.RR................RR..R.............R...R..............R.RR................RR................RR...............R..R................RR...............RRR................RR.......R..........R......R..........R.......R.........R....R.R.
 Success!
 ```
+
+### `pulse_console.py`
+
+This tool allows to access the PULSE console available on the serial port.
+
+It can be used like this:
+
+```
+python pulse_console.py --tty path/to/serial/port
+```
+
+If using a firmware with log hashing, you can provide a dictionary file:
+
+```
+python pulse_console.py --tty path/to/serial/port --log-dict path/to/loghash_dict.json
+```
