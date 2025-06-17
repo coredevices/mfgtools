@@ -1,3 +1,5 @@
 setuptools<81
+pyelftools
 -e python_libs/pebble-commander
+-e python_libs/pebble-loghash
 -e python_libs/pulse2

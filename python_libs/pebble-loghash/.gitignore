@@ -1,0 +1,7 @@
+*.pyc
+.env
+.DS_Store
+dist
+MANIFEST
+__pycache__
+.cache

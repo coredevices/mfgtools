@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: pebble.loghash
+Version: 2.6.0
+Summary: Pebble Log Hashing module
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# pyegg-pebble-loghash
+A python egg for dealing with hashed TinTin logs
