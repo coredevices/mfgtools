@@ -23,7 +23,7 @@ def main(port: str, serial: str, hwver: str, no_lock: bool) -> None:
     prompt = commander.apps.Prompt(link)
 
     sys.stdout.write("Erasing OTP\t\t\t\t")
-    r = prompt.command_and_response("flash sec wipe")
+    r = prompt.command_and_response("flash sec erase 0x1000")
     if r[0] != "OK":
         print(f"Flash security wipe failed: {r}")
         sys.exit(1)
@@ -54,7 +54,7 @@ def main(port: str, serial: str, hwver: str, no_lock: bool) -> None:
     if no_lock:
         sys.stdout.write("SKIPPED\n")
     else:
-        r = prompt.command_and_response("flash sec lock l0ckm3f0r3v3r")
+        r = prompt.command_and_response("flash sec lock 0x1000 l0ckm3f0r3v3r")
         if r[0] != "OK":
             print(f"Flash security lock failed: {r}")
             sys.exit(1)
